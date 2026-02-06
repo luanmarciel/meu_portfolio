@@ -1,0 +1,76 @@
+:root {
+    --azul-linkedin: #0077b5;
+    --azul-neon: #00a8ff;
+    --cor-texto: #1f2937;
+    --cor-fundo: #f8fafc;
+    --branco: #ffffff;
+    --cor-dark-hero: #0a0e14;
+    --card-dark: #1e2229;
+}
+
+* { box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--cor-fundo); overflow-x: hidden; color: var(--cor-texto); line-height: 1.6; }
+
+/* Navbar */
+#navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 5%; background: var(--branco); position: sticky; top: 0; z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+#navbar ul { display: flex; list-style: none; gap: 15px; padding: 0; margin: 0; }
+#navbar a { text-decoration: none; color: #64748b; font-size: 0.85rem; font-weight: 600; }
+
+/* Hero */
+.hero-section {
+    position: relative; background: var(--cor-dark-hero); padding: 50px 5%;
+    display: flex; flex-direction: column; align-items: center; min-height: 450px; overflow: hidden;
+}
+#binary-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+.container-hero { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px; }
+.foto-perfil img {
+    width: 150px; height: 150px; border-radius: 50%; object-fit: cover;
+    border: 3px solid var(--azul-neon); box-shadow: 0 0 20px rgba(0, 168, 255, 0.4);
+}
+.info-principal h1 { color: #fff; font-size: 2.5rem; margin: 0; }
+.info-principal .cargo { color: var(--azul-neon); font-size: 1rem; }
+.botoes { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; justify-content: center; }
+.btn-principal { padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.9rem; }
+.btn-linkedin { background: var(--azul-linkedin); color: #fff; }
+.btn-github { background: #fff; color: #000; }
+
+/* Containers */
+.container { padding: 40px 5%; max-width: 1100px; margin: 0 auto; }
+.titulo-secao { border-left: 6px solid var(--azul-linkedin); padding-left: 15px; margin-bottom: 25px; font-size: 1.6rem; }
+.card-padrao { background: var(--branco); padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+
+/* Grid Projetos */
+.grid-projetos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.card-projeto { background: var(--card-dark); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: 0.3s; }
+.card-projeto:hover { transform: translateY(-5px); }
+.header-projeto { padding: 15px; background: #252a33; color: #fff; border-bottom: 1px solid #333; }
+.header-projeto h3 { margin: 0; font-size: 1rem; }
+.preview-projeto { width: 100%; height: 140px; overflow: hidden; }
+.preview-projeto img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: 0.3s; }
+.card-projeto:hover .preview-projeto img { opacity: 1; }
+.conteudo-projeto { padding: 15px; flex-grow: 1; }
+.tag-projeto { color: var(--azul-neon); font-size: 0.8rem; font-weight: bold; margin-bottom: 8px; }
+.conteudo-projeto p { color: #cbd5e1; font-size: 0.85rem; margin: 0; }
+
+/* Grid Habilidades */
+.grid-habilidades { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.card-habilidade { background: #fff; padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0; transition: 0.3s; }
+.card-habilidade:hover { transform: translateY(-5px); border-color: var(--azul-neon); }
+.icone-habilidade { font-size: 2.5rem; margin-bottom: 15px; }
+.card-habilidade h3 { margin: 0 0 10px 0; font-size: 1.2rem; }
+
+/* Desktop */
+@media (min-width: 768px) {
+    .hero-section { flex-direction: row; padding: 100px 10%; min-height: 500px; }
+    .container-hero { flex-direction: row; text-align: left; }
+    .info-principal h1 { font-size: 4rem; }
+    .foto-perfil img { width: 220px; height: 220px; }
+    #navbar { padding: 15px 10%; }
+    #navbar a { font-size: 1rem; }
+}
+
+footer { text-align: center; padding: 30px; background: #f1f5f9; font-size: 0.8rem; color: #64748b; }
